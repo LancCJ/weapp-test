@@ -1,0 +1,11 @@
+<!--comp/starts-template/starts.wxml-->
+<template name="starsTemplate">
+  <view class='stars'>
+    <block wx:for="{{stars}}" wx:for-item="i" wx:key="{{stars}}">
+      <!-- <image wx:if="{{i}}" src="/images/icon/star.png"></image>
+      <image wx:else src="/images/icon/none-star.png"></image> -->
+      <image src="{{i==1?'/images/icon/star.png':'/images/icon/none-star.png'}}"></image>
+    </block>
+    <text>{{score}}</text>
+  </view>
+</template>

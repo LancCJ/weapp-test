@@ -1,0 +1,19 @@
+/* comp/starts-template/starts.wxss */
+@import "/comp/movies/stars-template/stars.wxss";
+
+.movie-contatiner {
+  display: flex;
+  flex-direction: column;
+  width: 200rpx;
+  height: 405rpx;
+}
+
+.movie-contatiner text {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.movieimg {
+  width: 200rpx;
+  height: 300rpx;
+}

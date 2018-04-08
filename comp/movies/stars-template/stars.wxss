@@ -1,0 +1,15 @@
+/* comp/starts-template/starts.wxss */
+.stars{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.stars image{
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.stars text{
+  margin-left:5px;
+  font-size: 10px;
+}

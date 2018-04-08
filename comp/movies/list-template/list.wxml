@@ -1,0 +1,24 @@
+<!--comp/movies/list-template/list.wxml-->
+
+<import src="/comp/movies/movie-template/movie.wxml"/>
+
+<template name="movieListTemplate">
+  <view class='list-container'>
+    <view class='list-movie-title'>
+      <text class='list-movie-title-left'>{{categoryTitle}}</text>
+      <view class='list-movie-title-right' data-category-id="{{categoryId}}" data-category-title="{{categoryTitle}}" catchtap='onMoreTap'>
+        <text style='font-size:20rpx;color:#2196F3' >更多</text>
+        <image src='/images/icon/arrow-right.png' style='margin-left:5px;'></image>
+      </view>
+    </view>
+
+    <view class='list-list-movie'>
+    <block wx:for="{{movies}}" wx:for-item="movie" wx:key="{{id}}">
+         <template is="movieTemplate" data="{{...movie}}"/>
+    </block>
+     <!-- <template is="movieTemplate"/>
+     <template is="movieTemplate"/> -->
+    </view>
+   
+  </view>
+</template>

@@ -1,0 +1,22 @@
+<!--movie.wxml-->
+<import src="/comp/movies/list-template/list.wxml"/>
+<import src="/comp/movies/movie-grid/movie-grid-template.wxml"/>
+
+<view class='search'>
+      <icon type='search' class='search-image' size='15'></icon>
+      <input type='text'  value="{{searchValue}}" confirm-type='search' placeholder="搜索电影、电视剧、综艺、影人" class='input'  placeholder-class="placeholder"
+      bindfocus='onBindfocus'
+      bindconfirm='onConfirm'></input>
+      <image wx:if="{{searchPanelShow}}" src='/images/icon/xx.png' class='clear-image' bindtap='onClearSearch'></image>
+</view>
+  
+<view wx:if="{{containerShow}}" class='movies-container'>
+  
+  <template is="movieListTemplate" data="{{...inTheaters}}"/>
+  <template is="movieListTemplate" data="{{...comingSoon}}"/>
+  <template is="movieListTemplate" data="{{...top250}}"/>
+</view>
+
+<view wx:if="{{searchPanelShow}}" class='search-panel'>
+  <template is="movieGridTemplate" data="{{...searchMovies}}"/>
+</view>

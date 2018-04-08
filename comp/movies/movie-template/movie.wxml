@@ -1,0 +1,10 @@
+<!--comp/starts-template/starts.wxml-->
+<import src="/comp/movies/stars-template/stars.wxml"/>
+
+<template name="movieTemplate">
+  <view class='movie-contatiner' data-movie-id="{{coverId}}" catchtap='onMovieDetail'>
+   <image class='movieimg' src="{{coverageUrl}}"/>
+   <text>{{title}}</text>
+   <template is="starsTemplate" data="{{stars:stars,score:average}}"/>
+  </view>
+</template>

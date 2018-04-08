@@ -1,0 +1,36 @@
+/* comp/movies/list-template/list.wxss */
+
+@import "/comp/movies/movie-template/movie.wxss";
+
+.list-container{
+  
+  background-color: #fff;
+  padding:10px;
+  margin-bottom:20rpx;
+}
+.list-movie-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+.list-movie-title-right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list-movie-title-right image{
+  width:15rpx;
+  height:15rpx;
+}
+
+.list-list-movie{
+  margin-top:5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

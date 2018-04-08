@@ -1,0 +1,6 @@
+<template name="castsTemplate">
+  <view class='casta-container'>
+    <image class='casta-avatar' src='{{avatars.large}}'></image>
+    <text class='casta-name'>{{name}}</text>
+  </view>
+</template>

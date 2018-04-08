@@ -1,0 +1,46 @@
+<!--pages/movies/detail/detail.wxml-->
+
+<import src="/comp/movies/casts-template/casts-template.wxml"/>
+<import src="/comp/movies/stars-template/stars.wxml"/>
+
+<view class='detail-container'>
+  <view class='detail-top'>
+    <image class='detail-top-bg' src='{{subject.coverImage}}'></image>
+    <view class='detail-top-info'>
+      <text class='detail-top-info-title'>{{subject.title}}</text>
+      <text class='detail-top-info-location-year'>{{subject.countries}}·{{subject.year}}</text>
+      <text class='detail-top-info-like-talk'>{{subject.wish_count}} <text style='color:#6C6B6A'>人喜欢</text> {{subject.comments_count}}<text style='color:#6C6B6A'> 条评论</text></text>
+    </view>
+  </view>
+  <image src='{{subject.coverImage}}' class='detail-top-image'></image>
+  <view class='detail-info'>
+    <text style='margin-bottom:30rpx;margin-left:20px;margin-top:40rpx;'>{{subject.title}}</text>
+    <view class='average'>
+    <text style='margin-right:10px;'>评分 </text>
+    <template is="starsTemplate" data="{{stars:subject.stars,score:subject.average}}"/>
+    </view>
+    <text style='margin-bottom:10rpx;margin-left:20px;'>导演 {{subject.directors}}</text>
+    <text style='margin-bottom:10rpx;margin-left:20px;'>影人 {{subject.castsname}}</text>
+    <text style='margin-bottom:10rpx;margin-left:20px;'>类型 {{subject.type}}</text>
+    <view style='margin-bottom:20rpx;height:1px;background-color: #aaa;width:100%;'></view>
+  </view>
+  <view class='detail-summary'>
+    <text class='color6C6B6A' style='font-size: 30rpx;margin-left:20rpx;'>剧情简介</text>
+    <text class='summary'>{{subject.summary}}</text>
+    <view style='margin-bottom:10rpx;height:1px;background-color: #aaa;width:100%;'></view>
+  </view>
+  <view>
+    <text class='color6C6B6A' style='font-size: 30rpx;margin-left:20rpx;'>影人</text>
+    <view class='detail-casts'>
+      <block wx:for="{{subject.casts}}" wx:for-item="casts" wx:key="{{casts}}">
+        <template is="castsTemplate" data="{{...casts}}"/>
+      </block>
+      <!-- <template is="castsTemplate"/>
+      <template is="castsTemplate"/>
+      <template is="castsTemplate"/>
+      <template is="castsTemplate"/>
+      <template is="castsTemplate"/> -->
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,24 @@
+<!--pages/post/post-detail/post-detail.wxml-->
+<view class='detail-container'>
+  <image src="{{isPlaying?detail_key.music.coverImg:detail_key.imgSrc}}"></image>
+  <image src="{{isPlaying?'/images/music/music-stop.png':'/images/music/music-start.png'}} "class='music'catch:tap='onPlayTap'></image>
+  <view class='detail-author-date'>
+    <image src='{{detail_key.avatar}}' style='width:40px;height:40px;'></image>
+    <text class='detail-author'>{{detail_key.author}}</text>
+    <text style='margin-left:10px;font-size:10px;color:#aaa'>发表于</text>
+    <text class='detail-date'>{{detail_key.dateTime}}</text>
+  </view>
+  <text class='detail-title'>{{detail_key.title}}</text>
+  <view>
+    <view class='detail-collection-share'>
+      <image wx:if="{{collected}}"  src='/images/icon/collection.png' style='width:96rpx;height:96rpx;' catch:tap='onCollectionTap'></image>
+      <image wx:else  src='/images/icon/collection-anti.png' style='width:96rpx;height:96rpx;' catch:tap='onCollectionTap'></image>
+      <image src='/images/icon/share.png' style='width:96rpx;height:96rpx;margin-left:20px;'  catch:tap='onShareTap'></image>
+      
+    </view>
+    <view style='height:1rpx;background-color: #aaa;top:48rpx;position:relative;z-index:-99;margin:0 auto;width:98%;'></view>
+  </view>
+  <textarea class='detail-content'>
+    {{detail_key.detail}}
+  </textarea>
+</view>
